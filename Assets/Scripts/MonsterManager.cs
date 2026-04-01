@@ -6,6 +6,8 @@ public class MonsterManager : MonoBehaviour
 {
     public GameObject prefabsMonster;
     float nowTime;
+    float minTime = 1f;
+    float maxTime = 5f;
     public float createTime = 1f;
 
     private void Start()
@@ -20,6 +22,7 @@ public class MonsterManager : MonoBehaviour
         {
             GameObject monster = Instantiate(prefabsMonster);
             monster.transform.position = transform.position;
+            createTime = Random.Range(minTime, maxTime);
             nowTime = 0;
         }
     }
